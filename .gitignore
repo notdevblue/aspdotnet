@@ -1,0 +1,5 @@
+**/Debug
+**/obj/*.csproj.nuget.dgspec.json
+**/obj/project.assets.json
+**/obj/project.nuget.cache
+**/obj/staticwebassets.pack.sentinel
