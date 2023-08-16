@@ -2,8 +2,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ExampleApi.Controllers;
 
-[ApiController]
-[Route("[controller]")]
+//[ApiController] // 
+[Route("[controller]")] // localhost/<Class Name Without Controller>
+// [Route("installgentoo")] // localhost/installgentoo
 public class MyExampleController : Controller
 {
     private readonly ILogger<MyExampleController> _logger;
@@ -11,11 +12,16 @@ public class MyExampleController : Controller
     public MyExampleController(ILogger<MyExampleController> logger)
     {
         _logger = logger;
+
+        // _logger.Log(LogLevel.Critical, "Oh no.."); // logs to console
+        // Instantiates class every time on request
+        // keep it light, keep it simple.
     }
 
     [HttpGet(Name = "GetMyExampleData")]
     public string Get()
     {
+        // MyExampleModel
         return "Remove Windows";
     }
 
